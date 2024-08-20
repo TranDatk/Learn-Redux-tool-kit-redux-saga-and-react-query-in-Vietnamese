@@ -113,7 +113,7 @@ export default AddTodo;
     - `useSelector()`
   - **Ưu điểm:** Redux Toolkit đơn giản hóa quá trình viết Redux bằng cách cung cấp các công cụ và cấu trúc rõ ràng hơn, giúp giảm thiểu boilerplate code. Đây là lựa chọn phù hợp khi bắt đầu với Redux trong các dự án mới hoặc chuyển đổi từ class component sang functional component.
 
-### 3. React Tool Kit Query - RTK Query
+### 3. RTK Query
 - **Mục đích:** Tập trung vào việc fetching (lấy dữ liệu) và caching (lưu trữ dữ liệu tạm thời).
 - **Tính năng:** RTK Query là một giải pháp toàn diện cho việc quản lý dữ liệu trong Redux, tương tự như các thư viện như React Query hoặc SWR, nhưng được tích hợp trực tiếp trong Redux Toolkit.
 - **Lợi ích:** Giúp đơn giản hóa việc tương tác với API, giảm thiểu mã lệnh cần thiết cho việc quản lý trạng thái dữ liệu từ các nguồn bên ngoài, đồng thời tối ưu hóa hiệu suất ứng dụng thông qua việc caching.
