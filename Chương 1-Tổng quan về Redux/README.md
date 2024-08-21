@@ -119,51 +119,6 @@ export default AddTodo;
 - **Lợi ích:** Giúp đơn giản hóa việc tương tác với API, giảm thiểu mã lệnh cần thiết cho việc quản lý trạng thái dữ liệu từ các nguồn bên ngoài, đồng thời tối ưu hóa hiệu suất ứng dụng thông qua việc caching.
 
 
-## Các Khái Niệm Chính
-
-### 1. **State**
-State đại diện cho toàn bộ trạng thái của ứng dụng trong một đối tượng JavaScript duy nhất. Đây là nơi lưu trữ tất cả dữ liệu cần thiết để hiển thị giao diện và xử lý logic ứng dụng.
-
-### 2. **Action**
-Action là một đối tượng JavaScript đơn giản mô tả một thay đổi cần thiết xảy ra trong state của ứng dụng. Mỗi action phải có một thuộc tính `type` mô tả loại hành động đang xảy ra và có thể chứa các thuộc tính khác để truyền dữ liệu bổ sung.
-
-```javascript
-{
-  type: 'ADD_TODO',
-  payload: { text: 'Learn Redux' }
-}
-```
-
-### 3. **Reducer**
-Reducer là một hàm thuần túy nhận vào state hiện tại và một action, sau đó trả về state mới. Reducer không thay đổi state hiện tại mà tạo ra một bản sao mới với các thay đổi cần thiết. Các state này được lưu trữ dưới dạng đối tượng và chúng xác định trạng thái của ứng dụng thay đổi như thế nào để đáp ứng với hành động được gửi đến "store".
-
-```javascript
-function todos(state = [], action) {
-  switch (action.type) {
-    case 'ADD_TODO':
-      return [
-        ...state,
-        {
-          text: action.payload.text,
-          completed: false
-        }
-      ];
-    default:
-      return state;
-  }
-}
-```
-
-### 4. **Store**
-Store là nơi lưu trữ state của ứng dụng và là nơi duy nhất mà state có thể được cập nhật thông qua gửi đi các actions. Chỉ có một "store" trong bất kỳ ứng dụng Redux nào. Store cung cấp các phương thức để truy cập state, dispatch actions, và đăng ký các listeners để lắng nghe thay đổi state.
-
-```javascript
-import { createStore } from 'redux';
-import todos from './reducers/todos';
-
-const store = createStore(todos);
-```
-
 ## Kết luận
 
 Redux là một công cụ mạnh mẽ giúp bạn quản lý state của ứng dụng một cách rõ ràng và có cấu trúc. 
