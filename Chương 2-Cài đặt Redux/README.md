@@ -39,6 +39,6 @@ ___
 ### 🐱‍🏍Đi tới bài tiếp theo 🚍 [Chương 3.1-Yêu cầu bài toán][link-chuong-3.1]
 
 
-[link-chuong-3.1]: https://github.com/TranDatk/
+[link-chuong-3.1]: https://github.com/TranDatk/Redux-toolkit_Redux-Saga_React-Query_Learning/tree/main/Ch%C6%B0%C6%A1ng%203.1-Y%C3%AAu%20c%E1%BA%A7u%20b%C3%A0i%20to%C3%A1n
 
 [link-redux-devtools]: https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
