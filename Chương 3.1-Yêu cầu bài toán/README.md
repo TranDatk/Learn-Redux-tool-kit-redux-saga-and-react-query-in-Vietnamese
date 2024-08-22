@@ -78,8 +78,8 @@ function todos(state = [], action) {
 ### 4. **Store**
 Store là nơi lưu trữ state của ứng dụng và là nơi duy nhất mà state có thể được cập nhật thông qua việc `dispatch` đi các actions. Chỉ có một "store" trong bất kỳ ứng dụng Redux nào. Store cung cấp các phương thức để truy cập state, dispatch actions, và đăng ký các listeners/subcribers để lắng nghe thay đổi state.
 
-### 5. **Slide**
-Khái niệm cộng gộp giữa Reducer và Action
+### 5. **Slice**
+Khái niệm cộng gộp giữa Reducer và Action, mình sẽ giải thích kỹ hơn ở chương sau.
 
 
 ## Giới thiệu mô hình Oneway Binding (One-way data flow)
@@ -127,5 +127,5 @@ Trong chương này mình đã đưa ra yêu cầu của bài toán và cách gi
 ___
 ### 🐱‍🏍Đi tới bài tiếp theo -> [Chương 3.2-Redux Store][link-chuong-3.2]
 
-[link-chuong-3.2]: https://en.wikipedia
+[link-chuong-3.2]: https://github.com/TranDatk/Redux-toolkit_Redux-Saga_React-Query_Learning/tree/main/Ch%C6%B0%C6%A1ng%203.2-Redux%20store
 [spaghetti-code]: https://en.wikipedia.org/wiki/Spaghetti_code
