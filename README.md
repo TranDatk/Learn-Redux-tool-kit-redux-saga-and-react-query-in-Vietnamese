@@ -57,11 +57,11 @@ Repo này chứa các bài học về **Redux**, **Redux Toolkit**, và **React 
 3. **Chạy ứng dụng**: `npm start` hoặc `yarn start`
 4. **Bắt đầu học**: Truy cập vào từng thư mục module để bắt đầu với các bài học cụ thể.
 
-## 4. Đóng góp
-
-Nếu bạn có ý tưởng cải tiến hoặc phát hiện lỗi, hãy tạo một issue hoặc pull request. Chúng tôi luôn hoan nghênh sự đóng góp của bạn!
-
-## 5. Liên hệ
+## 4. Liên hệ
 
 Nếu bạn có bất kỳ câu hỏi nào, vui lòng liên hệ qua email: `trannhatminhdat1103@gmail.com`.
+
+![Alt](https://repobeats.axiom.co/api/embed/78275119515d9930359c5104d062866863f1af64.svg "Repobeats analytics image")
+
+
 
