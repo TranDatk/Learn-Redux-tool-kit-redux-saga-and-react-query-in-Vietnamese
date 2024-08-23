@@ -1,23 +1,24 @@
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+import UsersTable from './users.table';
+import { Container } from 'react-bootstrap';
 
 function TabsContent() {
     return (
-        <Tabs
-            defaultActiveKey="profile"
-            id="uncontrolled-tab-example"
-            className="mb-3"
-        >
-            <Tab eventKey="home" title="Home">
-                Tab content for Home
-            </Tab>
-            <Tab eventKey="profile" title="Profile">
-                Tab content for Profile
-            </Tab>
-            <Tab eventKey="contact" title="Contact" disabled>
-                Tab content for Contact
-            </Tab>
-        </Tabs>
+        <Container>
+            <Tabs
+                defaultActiveKey="user"
+                id="uncontrolled-tab-example"
+                className="mb-3 mt-3"
+            >
+                <Tab eventKey="user" title="Users">
+                    <UsersTable />
+                </Tab>
+                <Tab eventKey="blog" title="Blogs">
+                    Tab content for Profile
+                </Tab>
+            </Tabs>
+        </Container>
     );
 }
 

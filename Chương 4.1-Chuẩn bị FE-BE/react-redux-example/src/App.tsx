@@ -1,6 +1,5 @@
 import Header from "./components/header"
 import TabsContent from "./components/tabs.content"
-import UsersTable from "./components/users.table"
 
 
 function App() {
@@ -8,7 +7,6 @@ function App() {
     <>
       <Header />
       <TabsContent />
-      <UsersTable />
     </>
   )
 }
