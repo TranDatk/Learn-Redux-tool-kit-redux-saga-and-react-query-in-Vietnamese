@@ -1,12 +1,14 @@
-
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
 import { useEffect, useState } from 'react';
+import { useQueryClient } from '@tanstack/react-query';
 
 function Header() {
 
-    const [mode, setMode] = useState("light")
+    const [mode, setMode] = useState("light");
+    const queryClient = useQueryClient();
+    const data = queryClient.getQueryData(['fetchUser', 1])
 
     useEffect(() => {
         const body = document.querySelector("body");
