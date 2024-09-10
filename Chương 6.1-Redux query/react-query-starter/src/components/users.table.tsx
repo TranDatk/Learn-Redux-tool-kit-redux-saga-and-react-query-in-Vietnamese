@@ -7,6 +7,13 @@ import UserDeleteModal from './modal/user.delete.modal';
 import UsersPagination from './pagination/users.pagination';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
+import { keepPreviousData, useQuery } from '@tanstack/react-query';
+
+export interface IUser {
+    id: string;
+    name: string;
+    email: string;
+}
 
 function UsersTable() {
 
@@ -17,23 +24,7 @@ function UsersTable() {
 
     const [isOpenDeleteModal, setIsOpenDeleteModal] = useState<boolean>(false);
 
-    const users = [
-        {
-            "id": 1,
-            "name": "Eric",
-            "email": "eric@gmail.com"
-        },
-        {
-            "id": 2,
-            "name": "Hỏi Dân IT",
-            "email": "hoidanit@gmail.com"
-        },
-        {
-            "id": 3,
-            "name": "Hỏi Dân IT",
-            "email": "admin@gmail.com"
-        }
-    ]
+    const [currentPage, setCurrentPage] = useState<number>(1);
 
     const handleEditUser = (user: any) => {
         setDataUser(user);
@@ -48,18 +39,40 @@ function UsersTable() {
     const PopoverComponent = forwardRef((props: any, ref: any) => {
         const { id } = props;
 
+        const { isPending, error, data } = useQuery({
+            queryKey: ['userDetail', id],
+            queryFn: (): Promise<IUser> =>
+                fetch(`http://localhost:8000/users/${id}`).then((res) =>
+                    res.json(),
+                ),
+        });
+
         return (
 
             <Popover ref={ref} {...props}>
                 <Popover.Header as="h3">Detail User</Popover.Header>
                 <Popover.Body>
                     <div>ID = {id}</div>
-                    <div>Name = ?</div>
-                    <div>Email = ?</div>
+                    <div>Name = {data?.name}</div>
+                    <div>Email = {data?.email}</div>
                 </Popover.Body>
             </Popover>
         )
-    })
+    });
+
+
+    const { isPending, error, data: users } = useQuery({
+        queryKey: ['fetchUsers', currentPage],
+        queryFn: (): Promise<IUser[]> =>
+            fetch(`http://localhost:8000/users?_page=${currentPage}&_limit=1`).then((res) =>
+                res.json(),
+            ),
+        placeholderData: keepPreviousData
+    });
+
+    if (isPending) return 'Loading...';
+
+    if (error) return 'An error has occurred: ' + error.message;
 
 
     return (
@@ -112,7 +125,9 @@ function UsersTable() {
                 </tbody>
             </Table>
             <UsersPagination
-                totalPages={0}
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
+                totalPages={5}
             />
             <UserCreateModal
                 isOpenCreateModal={isOpenCreateModal}
