@@ -127,7 +127,7 @@ function UsersTable() {
             <UsersPagination
                 setCurrentPage={setCurrentPage}
                 currentPage={currentPage}
-                totalPages={5}
+                totalPages={1}
             />
             <UserCreateModal
                 isOpenCreateModal={isOpenCreateModal}
